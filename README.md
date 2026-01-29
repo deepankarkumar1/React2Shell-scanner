@@ -290,28 +290,10 @@ The vulnerability exists in Next.js server actions due to improper handling of m
 
 ---
 
-## 📈 Future Enhancements
-
-- [ ] File download functionality in web UI
-- [ ] Multiple concurrent shell sessions
-- [ ] Command history persistence
-- [ ] Export scan reports (PDF/JSON)
-- [ ] Batch scanning multiple targets
-- [ ] Custom payload editor
-- [ ] Docker containerization
-- [ ] WebSocket for real-time shell
-- [ ] Advanced privilege escalation modules
-- [ ] Automated post-exploitation
-
----
-
----
-
 ## 📄 License
 
 MIT License - See [LICENSE](LICENSE) file for details
 
----
 
 ## ⚠️ Legal Disclaimer
 
