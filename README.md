@@ -66,7 +66,7 @@ A professional-grade web-based security tool for detecting and exploiting the Re
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/react2shell-scanner.git
+git clone https://github.com/deepankarkumar1/react2shell-scanner.git
 cd react2shell-scanner
 
 # Start the server (no npm install needed!)
