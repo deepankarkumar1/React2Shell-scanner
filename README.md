@@ -15,7 +15,6 @@ A professional-grade web-based security tool for detecting and exploiting the Re
 ### 🔍 Automated Vulnerability Scanning
 - **One-click scanning** - Simple web interface for quick vulnerability assessment
 - **Automated detection** - Multi-step verification process
-- **System profiling** - Automatic collection of target system information
 - **Real-time updates** - Live scan progress with detailed step tracking
 
 ### 💻 Interactive Web Shell
@@ -47,7 +46,6 @@ A professional-grade web-based security tool for detecting and exploiting the Re
 ### Vulnerability Scanner
 - Real-time scan progress
 - Color-coded status indicators
-- Detailed system information display
 
 ### Interactive Shell
 - Full terminal emulation in browser
